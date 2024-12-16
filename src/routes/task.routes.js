@@ -1,18 +1,18 @@
-const { Router } = require("express");
-const {
-  getAlltasks,
-  getTaks,
+import { Router } from "express";
+import {
   createTask,
   deleteTask,
+  getAlltasks,
+  getTaks,
   updateTask,
-} = require("../controllers/task.controller");
+} from "../controllers/tasks.controllers.js";
 
 const router = Router();
 
-router.get("/task", getAlltasks);
-router.get("/task/:id", getTaks);
-router.post("/task", createTask);
-router.delete("/task", deleteTask);
-router.put("/task", updateTask);
+router.get("/tasks", getAlltasks);
+router.get("/tasks/:id", getTaks);
+router.post("/tasks", createTask);
+router.delete("/tasks/:id", deleteTask);
+router.put("/tasks/:id", updateTask);
 
-module.exports = router;
+export default router;
