@@ -1,12 +1,13 @@
 import pg from "pg";
-const { Pool } = pg;
 
-const pool = new Pool({
-  user: "postgres", // Usuario
-  host: "localhost",
-  password: "Sopa2018.", // Contraseña
-  port: 5432, // Puerto
-  database: "tasksdb", // Base de datos
+import { db } from "./config.js";
+
+export const pool = new pg.Pool({
+  user: db.user,
+  password: db.password,
+  host: db.host,
+  port: db.port,
+  database: db.database,
 });
 
 export default pool;
