@@ -2,7 +2,7 @@ import pool from "../db.js";
 
 export const getAlltasks = async (req, res, next) => {
   try {
-    const allTasks = await pool.query("SELECT * FROM tasks");
+    const allTasks = await pool.query("SELECT * FROM tasks ORDER BY id ASC");
     res.json(allTasks.rows);
   } catch (error) {
     next(error);

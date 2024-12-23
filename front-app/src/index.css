@@ -2,3 +2,8 @@ body {
   background-color: #2d3436;
   color: #fff;
 }
+.css-rizt0-MuiTypography-root {
+  color: black;
+  font-size: 1.2rem !important;
+  font-weight: bold!;
+}

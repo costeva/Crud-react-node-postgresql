@@ -3,33 +3,36 @@ import {
   AppBar,
   Toolbar,
   Typography,
-  Button,
-  Container,
+  Drawer,
+  IconButton,
 } from "@mui/material";
-
+import { NavBarList } from "./navListDrawer";
 import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import MenuIcon from "@mui/icons-material/Menu";
 export const NavBar = () => {
   const Navigate = useNavigate();
+  const [open, setOpen] = useState(false);
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <>
       <AppBar position="static" color="transparent">
-        <Container>
-          <Toolbar>
-            <Typography variant="h6" sx={{ flexGrow: 1 }}>
-              <Link to="/" style={{ textDecoration: "none", color: "white" }}>
-                Pern Stack
-              </Link>
-            </Typography>
-            <Button
-              color="primary"
-              variant="contained"
-              onClick={() => Navigate("/tasks/new")}
-            >
-              New tasks
-            </Button>
-          </Toolbar>
-        </Container>
+        <Toolbar>
+          <IconButton color="#fff">
+            <MenuIcon color="#fff" size="large" onClick={() => setOpen(true)} />
+          </IconButton>
+          <Typography variant="h6"> Pern Stack</Typography>
+        </Toolbar>
       </AppBar>
-    </Box>
+      <Drawer
+        PaperProps={{
+          sx: { width: 250 },
+        }}
+        anchor="left"
+        open={open}
+        onClose={() => setOpen(false)}
+      >
+        <NavBarList />
+      </Drawer>
+    </>
   );
 };

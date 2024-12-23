@@ -8,10 +8,12 @@ import {
   Button,
   CircularProgress,
 } from "@mui/material";
+import { useParams } from "react-router";
 import { useTasksCreate } from "../hooks/useTasksCreate";
 
 const TaskForm = () => {
-  const { handleSubmit, handelChange, loading, task } = useTasksCreate();
+  const { id } = useParams();
+  const { handleSubmit, handelChange, loading, task } = useTasksCreate(id);
 
   return (
     <Grid2
@@ -24,7 +26,7 @@ const TaskForm = () => {
       <Grid2 item xs={12} sm={8} md={6}>
         <Card sx={{ mt: 5, p: 2 }}>
           <Typography variant="h5" component="div" gutterBottom>
-            Create Task
+            {id ? "Edit Task" : "Create Task"}
           </Typography>
           <CardContent>
             {" "}
@@ -40,6 +42,7 @@ const TaskForm = () => {
                 fullWidth
                 margin="normal"
                 name="title"
+                value={task.title}
                 required
                 onChange={handelChange}
               />
@@ -51,6 +54,7 @@ const TaskForm = () => {
                 name="description"
                 multiline
                 rows={4}
+                value={task.description}
                 required
                 onChange={handelChange}
               />
@@ -63,8 +67,10 @@ const TaskForm = () => {
                 >
                   {loading ? (
                     <CircularProgress color="inherit" size={24} />
+                  ) : id ? (
+                    "Update"
                   ) : (
-                    "Create Task"
+                    "Create"
                   )}
                 </Button>
               </Box>
