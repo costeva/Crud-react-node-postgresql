@@ -63,16 +63,20 @@ export const useTasksList = () => {
   }
 
   function handleDetail(id) {
-    console.log("View details of row:", id);
-    // Aquí tu lógica para mostrar detalles del registro
+    navigate(`/tasks/${id}/detail`);
   }
 
   useEffect(() => {
     setLoading(true);
-    getTasks().then((data) => {
-      setRows(data);
-      setLoading(false);
-    });
+    getTasks()
+      .then((data) => {
+        setRows(data);
+        setLoading(false);
+      })
+      .catch((error) => {
+        console.error(error);
+        setLoading(false);
+      });
   }, [setLoading]);
 
   return { columns, loading, rows };

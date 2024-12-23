@@ -17,8 +17,12 @@ export const NavBar = () => {
     <>
       <AppBar position="static" color="transparent">
         <Toolbar>
-          <IconButton color="#fff">
-            <MenuIcon color="#fff" size="large" onClick={() => setOpen(true)} />
+          <IconButton color="white">
+            <MenuIcon
+              color="white"
+              size="large"
+              onClick={() => setOpen(true)}
+            />
           </IconButton>
           <Typography variant="h6"> Pern Stack</Typography>
         </Toolbar>

@@ -19,16 +19,16 @@ export const NavBarList = () => {
           <ListItemIcon>
             <InboxIcon />
           </ListItemIcon>
-          <ListItemText primary="Inbox" />
+          <ListItemText primary="Home" />
         </ListItemButton>
         <ListItemButton>
           <ListItemIcon>
             <DraftsIcon />
           </ListItemIcon>
-          <ListItemText primary="Drafts" />
+          <ListItemText primary="Contact" />
         </ListItemButton>
       </List>
-      <Divider />
+      {/*  <Divider />
       <List component="nav" aria-label="secondary mailbox folder">
         <ListItemButton>
           <ListItemText primary="Trash" />
@@ -36,7 +36,7 @@ export const NavBarList = () => {
         <ListItemButton>
           <ListItemText primary="Spam" />
         </ListItemButton>
-      </List>
+      </List> */}
     </Box>
   );
 };
