@@ -16,13 +16,7 @@ const TaskForm = () => {
   const { handleSubmit, handelChange, loading, task } = useTasksCreate(id);
 
   return (
-    <Grid2
-      container
-      justifyContent="center"
-      alignItems="center"
-      direction="column"
-      style={{ minHeight: "100vh" }}
-    >
+    <Grid2 container justifyContent="center" alignItems="center">
       <Grid2 item xs={12} sm={8} md={6}>
         <Card sx={{ mt: 5, p: 2 }}>
           <Typography variant="h5" component="div" gutterBottom>

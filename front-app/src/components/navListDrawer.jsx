@@ -28,15 +28,6 @@ export const NavBarList = () => {
           <ListItemText primary="Contact" />
         </ListItemButton>
       </List>
-      {/*  <Divider />
-      <List component="nav" aria-label="secondary mailbox folder">
-        <ListItemButton>
-          <ListItemText primary="Trash" />
-        </ListItemButton>
-        <ListItemButton>
-          <ListItemText primary="Spam" />
-        </ListItemButton>
-      </List> */}
     </Box>
   );
 };
